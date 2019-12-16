@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package user;
+
+service User {
+    rpc queryUser (UserInfo) returns (PermissionInfo) {};
+    rpc sayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply {
+    string message = 1;
+}
+
+message UserInfo {
+    int32 userid = 1;
+    string username = 2;
+}
+
+message PermissionInfo {
+    int32 userid = 1;
+    int32 level = 2;
+}
